@@ -1,0 +1,22 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+	<h:head>
+		<h:outputStylesheet>
+			body{
+				margin:100px;
+			}
+		</h:outputStylesheet>
+	</h:head>
+	<h:body>
+		#{secureController.message} accessed on <h:outputText value="#{secureController.accessTime}"><f:convertDateTime pattern="dd-MM-yyyy H:mm" ></f:convertDateTime></h:outputText>
+		<br/>
+		<h:form>
+			<h:commandButton value="Logout" action="#{secureController.logout}"></h:commandButton>
+		</h:form>
+	</h:body>
+</html>

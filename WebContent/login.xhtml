@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+	<h:head>
+		<h:outputStylesheet>
+			body{
+				margin:100px;
+			}
+		</h:outputStylesheet>
+	</h:head>
+	<h:body>
+	<h:messages></h:messages>
+	<br/>
+		<h:form>
+			<h:inputText label="Username" id="username" value="#{loginController.username}">
+				<f:validateLength minimum="4"></f:validateLength>
+			</h:inputText>
+			<br />
+			<h:inputSecret label="Password" value="#{loginController.password}"></h:inputSecret>
+			<br/>
+			<h:commandButton label="Login" action="#{loginController.doLogin}"></h:commandButton>
+		</h:form>
+	</h:body>
+</html>

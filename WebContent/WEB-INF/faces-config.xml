@@ -6,6 +6,30 @@
               <managed-bean>
               	<managed-bean-name>helloJsf</managed-bean-name>
               	<managed-bean-class>id.fai.tutorial.jsf.controller.HelloJsf</managed-bean-class>
-              	<managed-bean-scope>view</managed-bean-scope>
+              	<managed-bean-scope>request</managed-bean-scope>
               </managed-bean>
+              <managed-bean>
+              	<managed-bean-name>loginController</managed-bean-name>
+              	<managed-bean-class>id.fai.tutorial.jsf.controller.LoginController</managed-bean-class>
+              	<managed-bean-scope>request</managed-bean-scope>
+              </managed-bean>
+              <managed-bean>
+              	<managed-bean-name>secureController</managed-bean-name>
+              	<managed-bean-class>id.fai.tutorial.jsf.controller.SecureController</managed-bean-class>
+              	<managed-bean-scope>request</managed-bean-scope>
+              </managed-bean>
+              <managed-bean>
+              	<managed-bean-name>sessionHandler</managed-bean-name>
+              	<managed-bean-class>id.fai.tutorial.jsf.util.SessionHandler</managed-bean-class>
+              	<managed-bean-scope>session</managed-bean-scope>
+              </managed-bean>
+				<navigation-rule>
+					<from-view-id>/login.xhtml</from-view-id>
+					<navigation-case>
+						<from-action>#{loginController.doLogin}</from-action>
+						<from-outcome>secured</from-outcome>
+						<to-view-id>/secure.xhtml</to-view-id>
+					</navigation-case>
+				</navigation-rule>              
+              
  </faces-config>             
